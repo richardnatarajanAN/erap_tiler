@@ -4,6 +4,8 @@ This repository is designed to tile together overlapping ERAP fragments, to prov
 
 This is not the neatest repository, and probably deserves a cleanup/refactor/implementation into TGSTS once it is stable.
 
+This is currently deployed on the popgen machine at `/mnt/ext4/home/richardn/TGS/misc/erap_tiler`
+
 ## Requirements
 
 As a jupyter notebook, this must be installed in the python version.
@@ -64,6 +66,8 @@ If >2 CDS sequences are possible, this is a truly ambiguous case, and alignment 
 
 Once this has been completed, the GEN sequence for each allele (and full GEN sequence if possible) is determined by merging overlaps. The GEN sequence for GEN ambig cases is calculated
 for the purposes of typing, but is not written to the results.
+
+In some circumstances, the assigned ERAP name, which is done on a fragment by fragment bases, is ambiguous. This can occur when there are noncoding diffs in the exonic regions (exon20 when the seq has 19 exons). A column is written to include the ambiguous names. ONE IMPORTANT CAVEAT: The erap naming does not include the chunk of intron 19 which is included in the CDS in the short isoform. To fully qualify diffs, the cds mms must be used, not the name. It is uncertain whether this region displays polymorphism.
 
 ### Typing
 From this, using the GEN sequence, we calculate the CDS, Exonic and protein sequences. Exonic sequence is calculated using ANTs, CDS and PROT is calculated using SFAT.
