@@ -1,4 +1,11 @@
+#Intermediate files
+erap_frags_aligned.sam
+erap_seqs.fasta
+
+#Output/data files
 out*/
+pd/
+*.xlsx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
